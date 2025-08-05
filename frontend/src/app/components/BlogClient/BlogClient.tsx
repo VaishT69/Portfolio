@@ -37,7 +37,7 @@ export default  function BlogClient({posts, currentPage, totalPages}: BlogClient
             <h1 className="text-4xl font-bold mb-8 text-white">Posts</h1>
 
      </motion.div>
-        <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+        <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8"> 
             {Array.from({ length: 6 }).map((_, i) => (
               <li
                 key={i}
