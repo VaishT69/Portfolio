@@ -50,21 +50,27 @@ author
 const options = { next: { revalidate: 30 } };
 const getTotalCountQuery = `count(*[_type == "post" && defined(slug.current)])
 `;
-export default async function Blog({
-  searchParams,
-}: {
-  searchParams?: Record<string, string | undefined>;
-}) {
-    const page = parseInt(searchParams?.page || "1", 10);
-    const start = (page - 1) * POSTS_PER_PAGE;
-    const end = start + POSTS_PER_PAGE;
-    const posts = await client.fetch(POSTS_QUERY(start,end), {}, options);
+interface BlogProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
-    const totalPosts = await client.fetch(getTotalCountQuery);
-    const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+export default async function Blog({ searchParams }: BlogProps) {
+  const resolvedSearchParams = await searchParams;
 
-    return (
-        <BlogClient posts={posts} currentPage={page} totalPages={totalPages}/>
-    );
+  const pageParam = Array.isArray(resolvedSearchParams?.page)
+    ? resolvedSearchParams.page[0]
+    : resolvedSearchParams?.page;
 
+  const page = parseInt(pageParam || "1", 10);
+
+  const start = (page - 1) * POSTS_PER_PAGE;
+  const end = start + POSTS_PER_PAGE;
+
+  const posts = await client.fetch(POSTS_QUERY(start, end), {}, options);
+  const totalPosts = await client.fetch(getTotalCountQuery);
+  const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+
+  return (
+    <BlogClient posts={posts} currentPage={page} totalPages={totalPages} />
+  );
 }
