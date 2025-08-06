@@ -25,7 +25,7 @@ export default async function PostPage({
     : null;
 
   return (
-    <main className="pt-10 bg-white pb-10">
+    <main className="pt-10 bg-black pb-10">
       <div className="container mx-auto lg:min-h-screen max-w-3xl p-8 flex flex-col gap-4 border-2 rounded-2xl bg-gray-950">
       <Link href="/" className="hover:underline">
         ← Back to posts

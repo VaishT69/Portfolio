@@ -10,22 +10,22 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-black shadow p-4 flex justify-between">
-      <h1 className="text-2xl font-bold text-gray-700 p-2">VAISHNAV TEELUCK</h1>
-      <ul className="hidden md:flex gap-6 font-semibold text-gray-500 border-2 border-gray-600 p-2 rounded-2xl pr-4 pl-4">
+    <nav className="bg-[#000000] shadow p-4 flex justify-between">
+      <h1 className="text-2xl font-bold text-[#1E3E62] p-2">VAISHNAV TEELUCK</h1>
+      <ul className="hidden md:flex gap-6 font-semibold text-[#FF6500] border-2 border-[#1E3E62] p-2 rounded-2xl pr-4 pl-4">
         <Link className="hover:text-pink-30 p-2" href="/">
           <li>Home</li>
         </Link>
-        <Link className="hover:text-pink-300 p-2" href="/about">
+        <Link className="hover:text-[#1E3E62] p-2" href="/about">
           <li>About</li>
         </Link>
-        <Link className="hover:text-pink-300 p-2" href="/projects">
+        <Link className="hover:text-[#1E3E62] p-2" href="/projects">
           <li>Projects</li>
         </Link>
-        <Link className="hover:text-pink-300 p-2" href="/contact">
+        <Link className="hover:text-[#1E3E62] p-2" href="/contact">
           <li>Contact</li>
         </Link>
-        <Link className="hover:text-pink-300 p-2" href="/blog">
+        <Link className="hover:text-[#1E3E62] p-2" href="/blog">
           <li>Blog</li>
         </Link>
       </ul>
@@ -38,9 +38,9 @@ export default function Nav() {
 
       {isOpen && (
 
-        <div className="fixed top-0 left-0 w-full space-y-4 h-screen justify-center text-center p-4 flex flex-col md:hidden z-40 bg-yellow-500">
+        <div className="fixed top-0 left-0 w-full space-y-4 h-screen justify-center text-center p-4 flex flex-col md:hidden z-40 bg-black">
           <Link
-          className="py-2 px-4 text-black"
+          className="py-2 px-4 text-[#FF6500] font-extralight text-2xl"
           href="/"
           onClick={() => setIsOpen(false)}
           >
@@ -48,28 +48,28 @@ export default function Nav() {
           </Link>
           
            <Link
-          className="py-2 px-4 text-black"
+          className="py-2 px-4 text-[#FF6500] font-extralight text-2xl"
           href="/about"
           onClick={() => setIsOpen(false)}
           >
           About
           </Link>
            <Link
-          className="py-2 px-4 text-black"
+          className="py-2 px-4 text-[#FF6500] font-extralight text-2xl"
           href="/projects"
           onClick={() => setIsOpen(false)}
           >
           Projects
           </Link>
            <Link
-          className="py-2 px-4 text-black"
+          className="py-2 px-4 text-[#FF6500] font-extralight text-2xl"
           href="/contact"
           onClick={() => setIsOpen(false)}
           >
           Contact
           </Link>
            <Link
-          className="py-2 px-4 text-black"
+          className="py-2 px-4 text-[#FF6500] font-extralight text-2xl"
           href="/blog"
           onClick={() => setIsOpen(false)}
           >
