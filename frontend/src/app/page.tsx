@@ -46,7 +46,7 @@ export default function Home() {
             showBorder={false}
             className="custom-class mt-4"
           >
-            I am a full Full-Stack Developer!
+            I am a Full-Stack Developer!
           </GradientText>
         </div>
         <div className="pt-20">
