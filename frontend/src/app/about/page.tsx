@@ -60,7 +60,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Projects
+          About Me
         </motion.h2>
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
@@ -147,7 +147,7 @@ export default function About() {
       <section className="bg-black py-16 px-6 md:px-16">
         <motion.h2
           className="text-4xl font-bold text-center mb-12 text-gray-100"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
@@ -159,7 +159,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Work History Column */}
           <div className="space-y-6">
-            <motion.h3
+            {/* <motion.h3
               className="text-2xl font-semibold mb-4 text-indigo-400"
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -167,10 +167,10 @@ export default function About() {
               viewport={{ once: true }}
             >
               Work History
-            </motion.h3>
-            {/* <h3 className="text-2xl font-semibold mb-4 text-indigo-400">
+            </motion.h3> */}
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-400">
               Work History
-            </h3> */}
+            </h3>
             {jobs.map((job, index) => (
               <motion.div
                 key={index}

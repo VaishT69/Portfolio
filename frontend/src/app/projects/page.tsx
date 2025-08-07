@@ -35,6 +35,22 @@ const projects: Project[] = [
     image: "/logo.jpg", // Replace with actual screenshot
     link: "https://www.betsoftware.com",
   },
+    {
+    title: "BET Software Website",
+    description:
+      "Contributed to the design and development of the new BET Software corporate website, improving performance, UI/UX, and branding alignment.",
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "Supabase"],
+    image: "/logo.jpg", // Replace with actual screenshot
+    link: "https://www.betsoftware.com",
+  },
+    {
+    title: "BET Software Website",
+    description:
+      "Contributed to the design and development of the new BET Software corporate website, improving performance, UI/UX, and branding alignment.",
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "Supabase"],
+    image: "/logo.jpg", // Replace with actual screenshot
+    link: "https://www.betsoftware.com",
+  },
 ];
 
 

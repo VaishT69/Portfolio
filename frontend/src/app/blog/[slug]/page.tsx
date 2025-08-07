@@ -19,31 +19,50 @@ export default async function PostPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const post = await client.fetch<SanityDocument>(POST_QUERY, await params, options);
+  const post = await client.fetch<SanityDocument>(
+    POST_QUERY,
+    await params,
+    options
+  );
   const postImageUrl = post.image
     ? urlFor(post.image)?.width(550).height(310).url()
     : null;
 
   return (
     <main className="pt-10 bg-black pb-10">
-      <div className="container mx-auto lg:min-h-screen max-w-3xl p-8 flex flex-col gap-4 border-2 rounded-2xl bg-gray-950">
-      <Link href="/" className="hover:underline">
-        ← Back to posts
-      </Link>
-      {postImageUrl && (
-        <img
-          src={postImageUrl}
-          alt={post.title}
-          className="aspect-video rounded-xl"
-          width="550"
-          height="310"
-        />
-      )}
-      <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
-      <div className="prose">
-        <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
-        {Array.isArray(post.body) && <PortableText value={post.body} />}
-      </div>
+      <div className="container mx-auto lg:min-h-screen max-w-3xl p-8 w-[90vw] lg:w-full flex flex-col gap-4 border-2 rounded-2xl bg-gray-950">
+        <Link href="/" className="hover:underline">
+          ← Back to posts
+        </Link>
+        <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
+
+        {postImageUrl && (
+          <img
+            src={postImageUrl}
+            alt={post.title}
+            className="aspect-video rounded-xl"
+            width="550"
+            height="310"
+          />
+        )}
+        <p className="font-semibold">
+          By: <span className="font-bold">{post.author}</span>
+        </p>
+        <p>
+          Published:{" "}
+          {new Date(post.publishedAt).toLocaleDateString("en-ZA", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true,
+          })}
+        </p>
+
+        <div className="prose">
+          {Array.isArray(post.body) && <PortableText value={post.body} />}
+        </div>
       </div>
     </main>
   );
