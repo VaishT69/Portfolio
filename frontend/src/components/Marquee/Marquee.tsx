@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef } from "react";
 
 interface MarqueeItem {
@@ -48,7 +49,7 @@ export default function Marquee({ items }: MarqueeProps) {
           {[...items, ...items].map((item, i) => (
             <div
               key={i}
-              className="box rounded-2xl cursor-pointer flex w-32 mx-6 my-4"
+              className="box rounded-2xl cursor-pointer flex w-32 mx-6 my-4 items-center justify-center"
             >
               <div className="bg-opacity-70 bg-white py-4 rounded-lg">
                 <img src={item.img} alt={item.alt} className="w-11/12 mx-auto" />

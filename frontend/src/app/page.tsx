@@ -1,10 +1,10 @@
 // import Image from "next/image";
 "use client";
 
-import SplitText from "@/app/components/SplitText/SplitText";
-import GradientText from "./components/GradientText/GradientText";
-import LandingComponent from "./components/LandingComponent/LandingComponent";
-import Marquee from "./components/Marquee/Marquee";
+import SplitText from "@/components/SplitText/SplitText";
+import GradientText from "../components/GradientText/GradientText";
+import LandingComponent from "../components/LandingComponent/LandingComponent";
+import Marquee from "../components/Marquee/Marquee";
 
 export default function Home() {
   const handleAnimationComplete = () => {
@@ -22,8 +22,8 @@ export default function Home() {
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full pb-10 ">
           <SplitText
-            text="Hallo, I'm Vaish!"
-            className="text-4xl md:text-6xl font-bold text-center mb-2"
+            text="Hey, I'm Vaish!"
+            className="text-6xl md:text-6xl font-bold text-center mb-2"
             delay={100}
             duration={0.8}
             ease="power3.out"
@@ -35,19 +35,41 @@ export default function Home() {
             textAlign="center"
             onLetterAnimationComplete={handleAnimationComplete}
           />
-
-          {/* <p className="text-lg text-gray-400 text-center mt-4">
-          I am a Full-Stack Developer
-        </p> */}
+          <p className="text-3xl  font-extralight text-gray-400">Designing with strategy, not just style.</p>
 
           <GradientText
             colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
             animationSpeed={3}
             showBorder={false}
-            className="custom-class mt-4"
+            className="custom-class mt-4 text-xl mb-20"
           >
-            I am a Full-Stack Developer!
+            Software Development Engineer
           </GradientText>
+          <div className="flex space-x-4 mb-20">
+            <a
+              href="docs/cv.pdf"
+              download="Vaishnav-Teeluck-CV.pdf"
+              className="px-6 py-3 rounded-xl font-semibold 
+               bg-[#1E3E62] text-white 
+               shadow-[0_0_10px_rgba(30,62,98,0.7)]
+               border-2 border-[#FF6500] hover:bg-[#FF6500] hover:shadow-[0_0_20px_#FF6500,0_0_40px_#FF6500] 
+               transform hover:-translate-y-1 active:translate-y-0.5 active:scale-95
+               transition-all duration-300 ease-in-out animate-glow"
+            >
+              Download CV
+            </a>
+            <a
+              href="/contact"
+              className="px-6 py-3 rounded-xl font-semibold 
+               bg-[#1E3E62] text-white 
+               shadow-[0_0_10px_rgba(30,62,98,0.7)]
+               hover:bg-[#FF6500] hover:shadow-[0_0_20px_#FF6500,0_0_40px_#FF6500] 
+               transform hover:-translate-y-1 active:translate-y-0.5 active:scale-95
+               transition-all duration-300 ease-in-out"
+            >
+              Get In Touch
+            </a>
+          </div>
         </div>
         <div className="pt-20">
           {/* <h1 className="text-4xl font-bold mb-2 text-center">Hi, I'm Vaish</h1> */}
