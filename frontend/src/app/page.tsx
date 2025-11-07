@@ -50,7 +50,7 @@ export default function Home() {
               href="docs/cv.pdf"
               download="Vaishnav-Teeluck-CV.pdf"
               className="px-6 py-3 rounded-xl font-semibold 
-               bg-[#1E3E62] text-white 
+               bg-[#FF6500] text-white 
                shadow-[0_0_10px_rgba(30,62,98,0.7)]
                border-2 border-[#FF6500] hover:bg-[#FF6500] hover:shadow-[0_0_20px_#FF6500,0_0_40px_#FF6500] 
                transform hover:-translate-y-1 active:translate-y-0.5 active:scale-95
@@ -63,7 +63,7 @@ export default function Home() {
               className="px-6 py-3 rounded-xl font-semibold 
                bg-[#1E3E62] text-white 
                shadow-[0_0_10px_rgba(30,62,98,0.7)]
-               hover:bg-[#FF6500] hover:shadow-[0_0_20px_#FF6500,0_0_40px_#FF6500] 
+               hover:bg-[#1E3E62] hover:shadow-[0_0_20px_#FF6500,0_0_40px_#FF6500] 
                transform hover:-translate-y-1 active:translate-y-0.5 active:scale-95
                transition-all duration-300 ease-in-out"
             >
