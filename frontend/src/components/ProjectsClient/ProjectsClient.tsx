@@ -5,9 +5,9 @@ import Link from "next/link";
 import { client } from "@/sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import { easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Project } from "@/types/project";
-import MarqueeCarousel from "../MaruqeeCarousel/MarqueCarousel";
+// import MarqueeCarousel from "../MaruqeeCarousel/MarqueCarousel";
 interface ProjectsClientProps {
   projects: Project[];
   currentPage: number;
