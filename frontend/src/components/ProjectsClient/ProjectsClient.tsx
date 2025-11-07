@@ -5,9 +5,9 @@ import Link from "next/link";
 import { client } from "@/sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import { easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Project } from "@/types/project";
-import MarqueeCarousel from "../MaruqeeCarousel/MarqueCarousel";
+// import MarqueeCarousel from "../MaruqeeCarousel/MarqueCarousel";
 interface ProjectsClientProps {
   projects: Project[];
   currentPage: number;
@@ -59,55 +59,54 @@ export default function ProjectsClient({
                   >
                     {image && (
                       <img
-                        src={urlFor(image)}
+                        src={urlFor(image)?.url() || ""}
                         alt={project.projectTitle}
                         className="bg-white w-full h-48 object-cover"
                       />
                     )}
-                                  <div className="p-6">
+                    <div className="p-6">
+                      <h2 className="text-2xl font-semibold text-indigo-400">
+                        {project.projectTitle}
+                      </h2>
+                      <p className="text-sm text-gray-300 mt-2 ">
+                        {project.body && project.body[0]?.children[0]?.text}
+                      </p>
 
-                    <h2 className="text-2xl font-semibold text-indigo-400">
-                      {project.projectTitle}
-                    </h2>
-                    <p className="text-sm text-gray-300 mt-2 ">
-                      {project.body && project.body[0]?.children[0]?.text}
-                    </p>
+                      {/* Skills */}
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {project.skills?.map((skill, idx) => (
+                          <span
+                            key={idx}
+                            className="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
 
-                    {/* Skills */}
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {project.skills?.map((skill, idx) => (
-                        <span
-                          key={idx}
-                          className="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex gap-4 mt-6">
-                      {project.url && (
-                        <Link
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-indigo-400 hover:underline text-sm"
-                        >
-                          Live Demo
-                        </Link>
-                      )}
-                      {project.github && (
-                        <Link
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-indigo-400 hover:underline text-sm"
-                        >
-                          GitHub
-                        </Link>
-                      )}
-                    </div>
+                      {/* Links */}
+                      <div className="flex gap-4 mt-6">
+                        {project.url && (
+                          <Link
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-indigo-400 hover:underline text-sm"
+                          >
+                            Live Demo
+                          </Link>
+                        )}
+                        {project.github && (
+                          <Link
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-indigo-400 hover:underline text-sm"
+                          >
+                            GitHub
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </motion.div>
                 ) : (
