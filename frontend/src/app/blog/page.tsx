@@ -31,7 +31,7 @@
 // }
 
 import { client } from "@/sanity/client";
-import BlogClient from "@/app/components/BlogClient/BlogClient";
+import BlogClient from "@/components/BlogClient/BlogClient";
 
 const POSTS_PER_PAGE = 6;
 const POSTS_QUERY = (start = 0, end = POSTS_PER_PAGE) => 

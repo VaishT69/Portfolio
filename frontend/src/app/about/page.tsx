@@ -85,10 +85,28 @@ export default function About() {
               specializing in web and mobile app development.
             </p>
             <p className="text-gray-300">
-              I love building user-friendly applications and solving complex
-              problems through clean code.
+              I love building user-friendly applications, solving complex
+              problems, and learning something new every day.
             </p>
-
+            <p className="text-gray-300">
+              I’ve worked on projects like{" "}
+              <span className="font-semibold text-gray-50">
+                {" "}
+                GallopTV, BetSoftware, and Hollywoodbets apps
+              </span>
+              , using{" "}
+              <span className="font-semibold text-gray-50">
+                JavaScript, TypeScript, React, Next.js, Node.js, and React
+                Native Expo
+              </span>
+              . I thrive on problem-solving, teamwork, and creating solutions
+              that make a difference.{" "}
+            </p>
+            <p>
+              Outside of coding, I’m a musician (tabla, sitar, double bass,
+              guitar) and a tech and car enthusiast, always exploring the latest
+              trends in both industries.
+            </p>
             <div className="flex space-x-4 mt-6">
               <a
                 href="docs/cv.pdf"
@@ -98,7 +116,7 @@ export default function About() {
                 Download CV
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="px-6 py-3 bg-[#1E3E62] text-white rounded-xl shadow hover:bg-[#FF6500] transition-colors"
               >
                 Contact Me
@@ -185,7 +203,7 @@ export default function About() {
                   className="relative bg-[#0B192C] p-6 h-40 rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 hover:scale-105 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 hover:opacity-100 transition duration-300"></div>
-                  <h4 className="font-semibold text-white relative z-10">
+                  <h4 className="font-semibold text-white relative z-10 text-lg">
                     {job.title}
                   </h4>
                   <p className="text-gray-400 text-sm relative z-10">
@@ -236,7 +254,7 @@ export default function About() {
                   className="relative bg-[#0B192C] p-6 h-40 rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 hover:scale-105 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 hover:opacity-100 transition duration-300"></div>
-                  <h4 className="font-semibold text-white relative z-10">
+                  <h4 className="font-semibold text-white relative z-10 text-lg">
                     {edu.title}{" "}
                   </h4>
                   <p className="text-gray-400 text-sm relative z-10">
